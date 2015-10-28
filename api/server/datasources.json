@@ -1,0 +1,15 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "mysql": {
+    "host": "localhost",
+    "port": 33060,
+    "database": "Stronglooptest",
+    "password": "secret",
+    "name": "mysql",
+    "connector": "mysql",
+    "user": "homestead"
+  }
+}

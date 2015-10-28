@@ -1,0 +1,27 @@
+{
+  "name": "appuser",
+  "plural": "appusers",
+  "base": "User",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {},
+  "validations": [],
+  "relations": {
+    "projects": {
+      "type": "hasMany",
+      "model": "project",
+      "foreignKey": "user_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "principalType": "ROLE",
+      "principalId": "$owner",
+      "permission": "ALLOW"
+    }
+  ],
+  "methods": {}
+}

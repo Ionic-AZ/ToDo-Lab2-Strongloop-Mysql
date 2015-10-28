@@ -1,0 +1,10 @@
+{
+  "name": "todoApp",
+  "app_id": "e22ece54",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "http://localhost:3000/api"
+    }
+  ]
+}
