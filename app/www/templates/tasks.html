@@ -1,14 +1,22 @@
-<ion-view view-title="{{activeProject.name}}">
-    <ion-nav-buttons side="right">
-      <button class="button button-icon" ng-click="newTask()">
+<ion-view>
+  <ion-nav-title> {{activeProject.name}}
+  </ion-nav-title>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon" ng-click="newTask()">
         <i class="icon ion-compose"></i>            
     </button>
-    </ion-nav-buttons>
-    <ion-content class="padding">
-		<ion-list>
-			<ion-item ng-repeat="task in tasks">
-				{{task.name}}
-			</ion-item>
-		</ion-list>
-	</ion-content>
+  </ion-nav-buttons>
+  <ion-content class="padding">
+    <ion-list>
+      <ion-item class="item-text-wrap item item-icon-left item-icon-right" ng-repeat=" task in tasks | orderBy: ['completed','name']"
+        ng-class="{completedTask: task.completed }">
+        {{task.name}}
+        <i class="icon" ng-class="task.completed ? 'ion-checkmark-circled': 'ion-ios-circle-outline'" ng-click="completeTask(task, $index)"></i>
+        <i class="ion-close icon icon-accessory" ng-click="deleteTask(task)"></i>
+      </ion-item>
+    </ion-list>
+
+
+  </ion-content>
 </ion-view>

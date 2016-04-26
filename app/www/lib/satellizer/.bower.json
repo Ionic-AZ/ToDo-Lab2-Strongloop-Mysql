@@ -16,17 +16,16 @@
     "test"
   ],
   "dependencies": {
-    "angular": "^1.3.x"
+    "angular": ">=1.3.x"
   },
-  "version": "0.12.5",
-  "_release": "0.12.5",
+  "version": "0.14.0",
+  "_release": "0.14.0",
   "_resolution": {
     "type": "version",
-    "tag": "0.12.5",
-    "commit": "4d572153c95c188690e4bbe6b3c78959d53b18a9"
+    "tag": "0.14.0",
+    "commit": "3377d09453136ce9dd5420dc9605ccb021be6e6c"
   },
   "_source": "https://github.com/sahat/satellizer.git",
-  "_target": "~0.12.5",
-  "_originalSource": "satellizer",
-  "_direct": true
+  "_target": "~0.14.0",
+  "_originalSource": "satellizer"
 }
