@@ -3,10 +3,15 @@ var boot = require('loopback-boot');
 
 var app = module.exports = loopback();
 
+// app.datasources['mysql'].automigrate(['appuser','project', 'task', 'User', 'ACL'], function(err) {
+//      console.log(err);
+// });
+
+
 app.start = function () {
-  
+
   // start the web server
-  return app.listen(function() {
+  return app.listen(function () {
     app.emit('started');
     var baseUrl = app.get('url').replace(/\/$/, '');
     console.log('Web server listening at: %s', baseUrl);
@@ -19,8 +24,20 @@ app.start = function () {
 
 // Bootstrap the application, configure models, datasources and middleware.
 // Sub-apps like REST API are mounted via boot scripts.
-boot(app, __dirname, function(err) {
+boot(app, __dirname, function (err) {
   if (err) throw err;
+
+  var appModels = ['appuser', 'project', 'task'];
+
+  var ds = app.dataSources.mysql
+  ds.isActual(appModels, function (err, actual) {
+    // if (!actual) {
+      console.log('auto migrate');
+      ds.autoupdate(appModels, function (err) {
+        if (err) throw (err);
+      });
+    // }
+  });
 
   // start the server if `$ node server.js`
   if (require.main === module)

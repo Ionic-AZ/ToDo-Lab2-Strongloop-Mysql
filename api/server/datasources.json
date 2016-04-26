@@ -4,8 +4,8 @@
     "connector": "memory"
   },
   "mysql": {
-    "host": "localhost",
-    "port": 33060,
+    "host": "192.168.99.100",
+    "port": 3306,
     "database": "Stronglooptest",
     "password": "secret",
     "name": "mysql",
@@ -13,3 +13,4 @@
     "user": "homestead"
   }
 }
+
